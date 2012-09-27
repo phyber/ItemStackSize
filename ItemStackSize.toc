@@ -1,0 +1,8 @@
+## Interface: 50001
+## Title: ItemStackSize
+## Author: phyber
+## Notes: Shows maximum stack size in an items tooltip.
+## Version: @project-version@
+## X-Category: Interface Enhancements
+
+ItemStackSize.lua
