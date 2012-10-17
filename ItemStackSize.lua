@@ -2,11 +2,12 @@ local L_MAXSTACKSIZE
 do
 	local locale = GetLocale()
 	if locale == "enUS" then
-		L_MAXSTACKSIZE = "Max Stack Size: "
+		L_MAXSTACKSIZE = "Max Stack Size:"
 	end
 end
 local orig = GameTooltip:GetScript("OnTooltipSetItem")
 local GetItemInfo = GetItemInfo
+local select = select
 GameTooltip:SetScript("OnTooltipSetItem", function(tooltip, ...)
 	local name, link = tooltip:GetItem()
 	if link then
