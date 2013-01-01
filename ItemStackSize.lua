@@ -2,7 +2,7 @@ local L_MAXSTACKSIZE
 do
 	local locale = GetLocale()
 	if locale == "enUS" then
-		L_MAXSTACKSIZE = "Max Stack Size:"
+		L_MAXSTACKSIZE = "Max Stack Size: %s"
 	end
 end
 local GetItemInfo = GetItemInfo
@@ -12,7 +12,7 @@ local function AddStackSize(tooltip, ...)
 	if link then
 		local maxStack = select(8, GetItemInfo(link))
 		if maxStack then
-			tooltip:AddDoubleLine(L_MAXSTACKSIZE, maxStack)
+			tooltip:AddLine(L_MAXSTACKSIZE:format(maxStack))
 		end
 	end
 end
