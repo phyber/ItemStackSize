@@ -1,4 +1,4 @@
-## Interface: 50200
+## Interface: 50300
 ## Title: ItemStackSize
 ## Author: phyber
 ## Notes: Shows maximum stack size in an items tooltip.
