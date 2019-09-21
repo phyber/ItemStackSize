@@ -1,11 +1,35 @@
 local L_MAXSTACKSIZE
 do
-    L_MAXSTACKSIZE = "Max Stack: %s"
-    -- If we end up with extra locales, they'll work something like below.
-    -- local locale = GetLocale()
-    -- if locale == "???" then
-    --     L_MAXSTACKSIZE = "???"
-    -- end
+    local locale = GetLocale()
+
+    if locale == "deDE" then
+        -- German
+        L_MAXSTACKSIZE = "Maximaler Stapel: %s"
+    elseif locale == "esES" or locale == "esMX" then
+        -- Spanish / Mexico
+        L_MAXSTACKSIZE = "Carga Máx: %s"
+    elseif locale == "frFR" then
+        -- French
+        L_MAXSTACKSIZE = "Empilement maxi: %s"
+    elseif locale == "itIT" then
+        -- Italian
+        L_MAXSTACKSIZE = "Massima Pila: %s"
+    elseif locale == "koKR" then
+        -- Korean
+        L_MAXSTACKSIZE = "최대 묶음 개수: %s"
+    elseif locale == "ptBR" then
+        -- Portugese, Brazil
+        L_MAXSTACKSIZE = "Empilhamento máx: %s"
+    elseif locale == "ruRU" then
+        -- Russian
+        L_MAXSTACKSIZE = "Максимум в стопке: %s"
+    elseif locale == "znCN" or locale == "zhTW" then
+        -- Chinese
+        L_MAXSTACKSIZE = "最大叠加: %s"
+    else
+        -- enUS is the fallback/default language
+        L_MAXSTACKSIZE = "Max Stack: %s"
+    end
 end
 
 local GetItemInfo = GetItemInfo
