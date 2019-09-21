@@ -41,4 +41,5 @@ read_globals = {
 
     -- Frames
     "GameTooltip",
+    "ItemRefTooltip",
 }

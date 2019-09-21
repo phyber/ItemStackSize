@@ -7,8 +7,10 @@ do
     --     L_MAXSTACKSIZE = "???"
     -- end
 end
+
 local GetItemInfo = GetItemInfo
 local select = select
+
 local function AddStackSize(tooltip)
     local name, link = tooltip:GetItem() -- luacheck: ignore 211/name
     if link then
@@ -18,4 +20,9 @@ local function AddStackSize(tooltip)
         end
     end
 end
+
+-- Mouseover tooltips
 GameTooltip:HookScript("OnTooltipSetItem", AddStackSize)
+
+-- Tooltips from clicking in chat, maybe others
+ItemRefTooltip:HookScript("OnTooltipSetItem", AddStackSize)
