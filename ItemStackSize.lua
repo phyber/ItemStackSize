@@ -5,6 +5,9 @@ do
     if locale == "deDE" then
         -- German
         L_MAXSTACKSIZE = "Maximaler Stapel: %s"
+    elseif locale == "enUS" then
+        -- English
+        L_MAXSTACKSIZE = "Max Stack: %s"
     elseif locale == "esES" or locale == "esMX" then
         -- Spanish / Mexico
         L_MAXSTACKSIZE = "Carga Máx: %s"
