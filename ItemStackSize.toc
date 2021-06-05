@@ -1,4 +1,7 @@
-## Interface: 80205
+## Interface: 90005
+## Interface-Retail: 90005
+## Interface-Classic: 11307
+## Interface-BCC: 20501
 ## Title: ItemStackSize
 ## Author: phyber
 ## Notes: Shows maximum stack size in an items tooltip.
