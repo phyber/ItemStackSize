@@ -31,6 +31,9 @@ globals = {
 
 -- Globals that we only read
 read_globals = {
+    -- C API
+    "TooltipDataProcessor",
+
     -- Libraries
 
     -- API Functions
@@ -42,4 +45,9 @@ read_globals = {
     -- Frames
     "GameTooltip",
     "ItemRefTooltip",
+
+    -- Constants
+    "Enum",
+    "WOW_PROJECT_ID",
+    "WOW_PROJECT_MAINLINE",
 }

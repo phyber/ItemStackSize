@@ -1,4 +1,6 @@
+-- ItemStackSize adds the maximum stack size of an item to the tooltip.
 local L_MAXSTACKSIZE
+
 do
     local locale = GetLocale()
 
@@ -40,16 +42,27 @@ local select = select
 
 local function AddStackSize(tooltip)
     local name, link = tooltip:GetItem() -- luacheck: ignore 211/name
+
     if link then
         local maxStack = select(8, GetItemInfo(link))
+
         if maxStack then
             tooltip:AddLine(L_MAXSTACKSIZE:format(maxStack))
         end
     end
 end
 
--- Mouseover tooltips
-GameTooltip:HookScript("OnTooltipSetItem", AddStackSize)
+-- Retail WoW changed how tooltip processing is handled.
+if WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
+    -- Item Tooltips
+    TooltipDataProcessor.AddTooltipPostCall(
+        Enum.TooltipDataType.Item,
+        AddStackSize
+    )
+else
+    -- Mouseover tooltips
+    GameTooltip:HookScript("OnTooltipSetItem", AddStackSize)
 
--- Tooltips from clicking in chat, maybe others
-ItemRefTooltip:HookScript("OnTooltipSetItem", AddStackSize)
+    -- Tooltips from clicking in chat, maybe others
+    ItemRefTooltip:HookScript("OnTooltipSetItem", AddStackSize)
+end
